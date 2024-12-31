@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import PersonalInfo, Skill, Project, Education, Experience, SocialMedia, Course
+from .models import PersonalInfo, Skill, Project, Education, Experience, SocialMedia, Course,Achievement
 
 def home(request):
     context = {
@@ -10,5 +10,6 @@ def home(request):
         'experiences': Experience.objects.all().order_by('-start_date'),
         'social_media': SocialMedia.objects.all(),
         'courses': Course.objects.all(),
+        'achievements': Achievement.objects.all(),
     }
     return render(request, 'main/home.html', context)

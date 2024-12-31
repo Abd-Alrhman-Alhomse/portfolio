@@ -40,6 +40,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#achievements">Achievements</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -218,7 +221,45 @@
 
 
 
-
+<!-- achivements -->
+<section id="achievements" class="section">
+    <div class="container">
+        <h2 class="section-title">Achievements & Competitions</h2>
+        <div class="achievements-container">
+            {% for achievement in achievements %}
+            <div class="achievement-card fade-in">
+                <div class="achievement-header">
+                    {% if achievement.logo %}
+                    <div class="achievement-logo">
+                        <img src="{{ achievement.logo.url }}" alt="{{ achievement.organization }} logo">
+                    </div>
+                    {% endif %}
+                    <div class="achievement-title">
+                        <h3>{{ achievement.title }}</h3>
+                        <h4>{{ achievement.organization }}</h4>
+                    </div>
+                </div>
+                <div class="achievement-body">
+                    {% if achievement.position %}
+                    <div class="achievement-position">
+                        <span class="badge">{{ achievement.position }}</span>
+                    </div>
+                    {% endif %}
+                    <div class="achievement-date">{{ achievement.date|date:"F Y" }}</div>
+                    {% if achievement.description %}
+                    <p class="achievement-description">{{ achievement.description }}</p>
+                    {% endif %}
+                    {% if achievement.certificate_url %}
+                    <a href="{{ achievement.certificate_url }}" class="btn btn-sm btn-outline-primary" target="_blank">
+                        View Certificate
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 
 
 

@@ -75,3 +75,20 @@ class Course(models.Model):
 
     def __str__(self):
         return f"{self.title} - {self.institution}"
+    
+
+
+class Achievement(models.Model):
+    title = models.CharField(max_length=200)
+    organization = models.CharField(max_length=200)
+    date = models.DateField()
+    description = models.TextField(blank=True)
+    position = models.CharField(max_length=100, blank=True)  # e.g., "Finalist", "Top 100"
+    certificate_url = models.URLField(blank=True)
+    logo = models.ImageField(upload_to='achievements/', blank=True)
+
+    class Meta:
+        ordering = ['-date']
+
+    def __str__(self):
+        return f"{self.title} - {self.organization}"
