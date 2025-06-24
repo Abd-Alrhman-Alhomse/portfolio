@@ -17,7 +17,7 @@ class PersonalInfo(models.Model):
 class Skill(models.Model):
     name = models.CharField(max_length=100)
     percentage = models.IntegerField()
-
+    image = models.ImageField(upload_to='skills/', default='skills/default.png')
     def __str__(self):
         return self.name
 

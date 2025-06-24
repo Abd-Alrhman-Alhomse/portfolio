@@ -83,7 +83,7 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills Section
     <section id="skills" class="section">
         <div class="container">
             <h2 class="section-title">Skills</h2>
@@ -91,18 +91,69 @@
                 {% for skill in skills %}
                 <div class="col-md-6 mb-4">
                     <div class="skill-item">
+                        <img src="{{ skill.image.url }}" class="card-img-top" alt="{{ skill.name }}">
                         <h3>{{ skill.name }}</h3>
-                        <div class="progress">
+                        <!-- <div class="progress">
                             <div class="progress-bar" role="progressbar" style="width: {{ skill.percentage }}%">
                                 {{ skill.percentage }}%
                             </div>
-                        </div>
-                    </div>
+                        </div> -->
+                    <!-- </div>
                 </div>
                 {% endfor %}
             </div>
         </div>
-    </section>
+    </section> --> -->
+
+    <!-- Skills Section -->
+<!-- <section id="skills" class="section">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">Skills</h2> -->
+        <!-- <div class="row justify-content-center">
+            {% for skill in skills %}
+            <div class="col-6 col-sm-4 col-md-3 mb-4 d-flex justify-content-center">
+                <div class="skill-item text-center">
+                    <img src="{{ skill.image.url }}" class="skill-icon mb-2" alt="{{ skill.name }}">
+                    <h3 class="skill-name">{{ skill.name }}</h3>
+                </div>
+            </div>
+            {% endfor %}
+        </div> -->
+        <!-- <div class="masonry-grid">
+    {% for skill in skills %}
+    <div class="masonry-item">
+        <div class="skill-item text-center">
+            <img src="{{ skill.image.url }}" class="skill-icon mb-2" alt="{{ skill.name }}">
+            <h3 class="skill-name">{{ skill.name }}</h3>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+    </div>
+</section> -->
+
+
+
+
+<section id="skills" class="section">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">Skills</h2>
+        <div class="masonry-grid">
+            {% for skill in skills %}
+            <div class="masonry-item">
+                <div class="skill-item text-center">
+                    <img src="{{ skill.image.url }}" class="skill-icon mb-2" alt="{{ skill.name }}">
+                    <h3 class="skill-name">{{ skill.name }}</h3>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+
+
 
     <!-- Projects Section -->
     <section id="projects" class="section">
